@@ -82,6 +82,10 @@ header nav {
     display: flex;
 }
 
+.desert-titles img:last-of-type {
+    width: 100%;
+}
+
 .learn-more-btn {
     background-color: transparent;
     color: #9B582E;
@@ -517,7 +521,7 @@ footer {
 }
 
 
-.secondary-footer-nav ul{
+.secondary-footer-nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -532,16 +536,16 @@ footer {
     padding-right: 3px;
 }
 
-.secondary-footer-nav ul li p{
+.secondary-footer-nav ul li p {
     font-size: 12px;
-    margin:0;
+    margin: 0;
     color: #6E6E6E;
     font-weight: 500;
     padding-left: 3px;
     padding-right: 3px;
 }
 
-.secondary-footer-nav{
+.secondary-footer-nav {
     margin-top: 12px;
 }
 
