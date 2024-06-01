@@ -1,102 +1,531 @@
 <!doctype html>
 <html lang="bg">
-    <head>
-        <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Krystallino"/>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Krystallino" />
+    <title>Krystallino</title>
 
-        <title>Krystallino</title>
+    <link rel="preload" href="/fonts/Manrope/Manrope-Light.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="/fonts/Manrope/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="/fonts/Manrope/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="/fonts/Manrope/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="/fonts/Manrope/Manrope-Bold.woff2" as="font" type="font/woff2" crossorigin/>
 
-        <link rel="preload" href="/fonts/Manrope/Manrope-Light.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="/fonts/Manrope/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="/fonts/Manrope/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="/fonts/Manrope/Manrope-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="/fonts/Manrope/Manrope-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff2" as="font" type="font/woff2"
+          crossorigin/>
 
-        <link rel="preload" href="/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <style type="text/css">
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/Manrope-Light.eot') format('embedded-opentype'),
+            url('/fonts/Manrope/Manrope-Light.woff2') format('woff2'),
+            url('/fonts/Manrope/Manrope-Light.woff') format('woff'),
+            url('/fonts/Manrope/Manrope-Light.ttf') format('truetype'),
+            url('/fonts/Manrope/Manrope-Light.svg#Manrope') format('svg');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
 
-        <style type="text/css">
-            @font-face {
-                font-family: 'Manrope';
-                src: url('/fonts/Manrope/Manrope-Light.eot') format('embedded-opentype'),
-                    url('/fonts/Manrope/Manrope-Light.woff2') format('woff2'),
-                    url('/fonts/Manrope/Manrope-Light.woff') format('woff'),
-                    url('/fonts/Manrope/Manrope-Light.ttf') format('truetype'),
-                    url('/fonts/Manrope/Manrope-Light.svg#Manrope') format('svg');
-                font-weight: 300;
-                font-style: normal;
-                font-display: swap;
-            }
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/Manrope-Regular.eot') format('embedded-opentype'),
+            url('/fonts/Manrope/Manrope-Regular.woff2') format('woff2'),
+            url('/fonts/Manrope/Manrope-Regular.woff') format('woff'),
+            url('/fonts/Manrope/Manrope-Regular.ttf') format('truetype'),
+            url('/fonts/Manrope/Manrope-Regular.svg#Manrope') format('svg');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
 
-            @font-face {
-                font-family: 'Manrope';
-                src: url('/fonts/Manrope/Manrope-Regular.eot') format('embedded-opentype'),
-                    url('/fonts/Manrope/Manrope-Regular.woff2') format('woff2'),
-                    url('/fonts/Manrope/Manrope-Regular.woff') format('woff'),
-                    url('/fonts/Manrope/Manrope-Regular.ttf') format('truetype'),
-                    url('/fonts/Manrope/Manrope-Regular.svg#Manrope') format('svg');
-                font-weight: 400;
-                font-style: normal;
-                font-display: swap;
-            }
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/Manrope-Medium.eot') format('embedded-opentype'),
+            url('/fonts/Manrope/Manrope-Medium.woff2') format('woff2'),
+            url('/fonts/Manrope/Manrope-Medium.woff') format('woff'),
+            url('/fonts/Manrope/Manrope-Medium.ttf') format('truetype'),
+            url('/fonts/Manrope/Manrope-Medium.svg#Manrope') format('svg');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
 
-            @font-face {
-                font-family: 'Manrope';
-                src: url('/fonts/Manrope/Manrope-Medium.eot') format('embedded-opentype'),
-                    url('/fonts/Manrope/Manrope-Medium.woff2') format('woff2'),
-                    url('/fonts/Manrope/Manrope-Medium.woff') format('woff'),
-                    url('/fonts/Manrope/Manrope-Medium.ttf') format('truetype'),
-                    url('/fonts/Manrope/Manrope-Medium.svg#Manrope') format('svg');
-                font-weight: 500;
-                font-style: normal;
-                font-display: swap;
-            }
+        @font-face {
+            font-family: 'Manrope';
+            src: url('/fonts/Manrope/Manrope-SemiBold.eot') format('embedded-opentype'),
+            url('/fonts/Manrope/Manrope-SemiBold.woff2') format('woff2'),
+            url('/fonts/Manrope/Manrope-SemiBold.woff') format('woff'),
+            url('/fonts/Manrope/Manrope-SemiBold.ttf') format('truetype'),
+            url('/fonts/Manrope/Manrope-SemiBold.svg#Manrope') format('svg');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
 
-            @font-face {
-                font-family: 'Manrope';
-                src: url('/fonts/Manrope/Manrope-SemiBold.eot') format('embedded-opentype'),
-                    url('/fonts/Manrope/Manrope-SemiBold.woff2') format('woff2'),
-                    url('/fonts/Manrope/Manrope-SemiBold.woff') format('woff'),
-                    url('/fonts/Manrope/Manrope-SemiBold.ttf') format('truetype'),
-                    url('/fonts/Manrope/Manrope-SemiBold.svg#Manrope') format('svg');
-                font-weight: 600;
-                font-style: normal;
-                font-display: swap;
-            }
+        @font-face {
+            font-family: 'Noto Serif';
+            src: url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.eot') format('embedded-opentype'),
+            url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff2') format('woff2'),
+            url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff') format('woff'),
+            url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.ttf') format('truetype'),
+            url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.svg#NotoSerifDisplay') format('svg');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-            @font-face {
-                font-family: 'Noto Serif';
-                src: url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.eot') format('embedded-opentype'),
-                    url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff2') format('woff2'),
-                    url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.woff') format('woff'),
-                    url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.ttf') format('truetype'),
-                    url('/fonts/NotoSerifDisplay/NotoSerifDisplay-Bold.svg#NotoSerifDisplay') format('svg');
-                font-weight: 700;
-                font-style: normal;
-                font-display: swap;
-            }
+        body {
+            font-size: 16px;
+            color: #000000;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1;
+        }
+    </style>
 
-            body {
-                font-size: 16px;
-                color: #000000;
-                font-family: 'Manrope', sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                line-height: 1;
-            }
-        </style>
+    <link rel="stylesheet" href="/src/sass/app.scss"/>
+</head>
 
-        <link rel="stylesheet" href="/src/sass/app.scss" />
-    </head>
+<body>
+<div id="app">
+    <header>
+        <section class="logo-wrapper">
+            <img src="./assets/krystallino-logo.png" alt="Logo">
+        </section>
+        <nav>
+            <ul class="header-list">
+                <li><a href="#our-desserts">Нашите десерти</a></li>
+                <li><a href="#reviews">Отзиви</a></li>
+                <li><a href="#forOrders">За поръчки и запитвания</a></li>
+                <li><a href="#feedback">Препоръки</a></li>
+                <li><a href="#the-media">Медиите за нас</a></li>
+                <li><a href="#contact-us">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="landing">
+            <section class="landing-titles">
+                <h1>Десерти Kristallino - където <span class="black">изкуството</span> среща <span
+                    class="black">десерта</span>.
+                </h1>
+                <p>Отдайте се на нашите изящни творения, изработени със страст и прецизност от световноизвестния сладкар
+                    Кристалин Илиев. Разгледайте нашите иновативни десерти, които обещават да измамят вкусовите ви
+                    рецептори и да запалят сетивата ви.</p>
 
-    <body>
-        <div id="app">
-            Започни работа тук. Успех! :)
-        </div>
+                <article class="landing-buttons">
+                    <button class="make-a-request-btn">Направи заявка</button>
+                    <button class="learn-more-btn">Научи повече</button>
+                </article>
+            </section>
+            <section class="landing-foods">
+                <ul>
+                    <li class="food-card">
+                        <section class="food-img-card-wrapper">
+                            <img
+                                src="./assets/Firefly%20Strawberry%20and%20basil%20with%20cream%20desert%20on%20a%20white%20background%2059251.png"
+                                alt="Strawberry desert">
+                        </section>
+                        <h2>Ягоди и босилек</h2>
+                        <img class="separator" src="./assets/separator.png" alt="">
+                        <p>Отпразнувайте същността на лятото със зрели ягоди, съчетани с ароматен босилек, освежаващо
+                            удоволствие за небцето.</p>
+                        <a href="#learn-more">НАУЧЕТЕ ПОВЕЧЕ</a>
+                    </li>
+                    <li class="food-card">
+                        <section class="food-img-card-wrapper">
+                            <img
+                                src="./assets/Firefly%20Yogurt,%20Walnuts%20and%20Honey%20desert%20on%20a%20white%20background%201445.png"
+                                alt="Strawberry desert">
+                        </section>
+                        <h2>Ягоди и босилек</h2>
+                        <img class="separator" src="./assets/separator.png" alt="">
+                        <p>Отпразнувайте същността на лятото със зрели ягоди, съчетани с ароматен босилек, освежаващо
+                            удоволствие за небцето.</p>
+                        <a href="#learn-more">НАУЧЕТЕ ПОВЕЧЕ</a>
+                    </li>
+                    <li class="food-card">
+                        <section class="food-img-card-wrapper">
+                            <img
+                                src="./assets/Firefly%20Bacon%20and%20blueberry%20desert%20on%20a%20white%20background%2011617.png"
+                                alt="Bacon and blueberries desert">
+                        </section>
+                        <h2>Ягоди и босилек</h2>
+                        <img class="separator" src="./assets/separator.png" alt="">
+                        <p>Отпразнувайте същността на лятото със зрели ягоди, съчетани с ароматен босилек, освежаващо
+                            удоволствие за небцето.</p>
+                        <a href="#learn-more">НАУЧЕТЕ ПОВЕЧЕ</a>
+                    </li>
+                    <li class="food-card">
+                        <section class="food-img-card-wrapper">
+                            <img
+                                src="./assets/Firefly%20Crispy%20sunflower%20seed%20with%20cream%20desert%20on%20a%20white%20background%201445.png"
+                                alt="Ice Cream">
+                        </section>
+                        <h2>Ягоди и босилек</h2>
+                        <img class="separator" src="./assets/separator.png" alt="">
+                        <p>Отпразнувайте същността на лятото със зрели ягоди, съчетани с ароматен босилек, освежаващо
+                            удоволствие за небцето.</p>
+                        <a href="#learn-more">НАУЧЕТЕ ПОВЕЧЕ</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="our-chef">
+                <article class="chef-image-wrapper">
+                    <img src="./assets/the-big-boss.png" alt="Chef Кристалин">
+                </article>
+                <article class="chef-description">
+                    <h2>Chef <br> Кристалин</h2>
+                    <img class="separator" src="./assets/separator.png" alt="">
+                    <p>Шеф Кристалин Илиев е световноизвестен сладкар, известен със своите иновативни и артистични
+                        творения на десерти. С повече от две десетилетия опит, той съчетава традиционни техники с
+                        модерни вкусове, завладявайки кулинарния свят чрез своята марка Krystallino. Уникалните десерти
+                        на шеф Кристалин, като кисело мляко с орехи и мед или бекон с боровинки, отразяват неговата
+                        отдаденост на качеството и креативността, спечелвайки й международно признание и лоялни
+                        последователи.</p>
+                </article>
+            </section>
+        </section>
+        <section class="deserts">
+            <h2>Десерти</h2>
+            <img src="./assets/separator.png" class="separator" alt="">
+            <h3>ВНИМАТЕЛНО СЕЛЕКТИРАНИ ВКУСОВЕ</h3>
 
-        <script type="module" src="/src/js/main.js"></script>
-    </body>
+            <article class="desert-detailed">
+                <article class="desert-detailed-card">
+                    <section class="desert-img-wrapper">
+                        <img
+                            src="./assets/Firefly%20Strawberry%20and%20basil%20with%20cream%20desert%20on%20a%20white%20background%2059251.png"
+                            alt="Strawberry basil">
+                    </section>
+                    <section class="desert-titles">
+                        <h2>Ягоди и босилек</h2>
+                        <p>Възхитителен сезонен десерт с узрели ягоди, съчетани с пресен босилек, създавайки
+                            освежаваща и ароматна вкусова комбинация, която въплъщава есенцията на лятото.</p>
+                        <p><strong>Основни съставки:</strong> кисело мляко, орехи, мед, захар, желатин (за
+                            консистенция), ванилов екстракт</p>
+                    </section>
+                    <ul class="food-nutrition-table">
+                        <li>
+                            <p>Калории:</p>
+                            <strong class="number-strong">200</strong>
+                        </li>
+                        <li>
+                            <p>Общо мазнини:</p>
+                            <strong class="number-strong">12g</strong>
+                        </li>
+                        <li>
+                            <p>Наситени мазнини:</p>
+                            <strong class="number-strong">3g</strong>
+                        </li>
+                        <li>
+                            <p>Общо въглехидрати:</p>
+                            <strong class="number-strong">20g</strong>
+                        </li>
+                        <li>
+                            <p>Протеин:</p>
+                            <strong class="number-strong">6g</strong>
+                        </li>
+                        <li>
+                            <p>Захари:</p>
+                            <strong class="number-strong">15g</strong>
+                        </li>
+                        <li>
+                            <p>Натрий:</p>
+                            <strong class="number-strong">50 mg</strong>
+                        </li>
+                        <li>
+                            <p>Холестерол:</p>
+                            <strong class="number-strong">15 mg</strong>
+                        </li>
+                    </ul>
+                </article>
+                <article class="desert-detailed-card">
+                    <section class="desert-img-wrapper">
+                        <img
+                            src="./assets/Firefly%20Bacon%20and%20blueberry%20desert%20on%20a%20white%20background%2011617.png"
+                            alt="Strawberry basil">
+                    </section>
+                    <section class="desert-titles">
+                        <h2>Ягоди и босилек</h2>
+                        <p>Възхитителен сезонен десерт с узрели ягоди, съчетани с пресен босилек, създавайки
+                            освежаваща и ароматна вкусова комбинация, която въплъщава есенцията на лятото.</p>
+                        <p><strong>Основни съставки:</strong> кисело мляко, орехи, мед, захар, желатин (за
+                            консистенция), ванилов екстракт</p>
+                    </section>
+                    <ul class="food-nutrition-table">
+                        <li>
+                            <p>Калории:</p>
+                            <strong class="number-strong">200</strong>
+                        </li>
+                        <li>
+                            <p>Общо мазнини:</p>
+                            <strong class="number-strong">12g</strong>
+                        </li>
+                        <li>
+                            <p>Наситени мазнини:</p>
+                            <strong class="number-strong">3g</strong>
+                        </li>
+                        <li>
+                            <p>Общо въглехидрати:</p>
+                            <strong class="number-strong">20g</strong>
+                        </li>
+                        <li>
+                            <p>Протеин:</p>
+                            <strong class="number-strong">6g</strong>
+                        </li>
+                        <li>
+                            <p>Захари:</p>
+                            <strong class="number-strong">15g</strong>
+                        </li>
+                        <li>
+                            <p>Натрий:</p>
+                            <strong class="number-strong">50 mg</strong>
+                        </li>
+                        <li>
+                            <p>Холестерол:</p>
+                            <strong class="number-strong">15 mg</strong>
+                        </li>
+                    </ul>
+                </article>
+                <article class="desert-detailed-card">
+                    <section class="desert-img-wrapper">
+                        <img
+                            src="./assets/Firefly%20Yogurt,%20Walnuts%20and%20Honey%20desert%20on%20a%20white%20background%201445.png"
+                            alt="Yogurt dessert"/>
+                    </section>
+                    <section class="desert-titles">
+                        <h2>Ягоди и босилек</h2>
+                        <p>Възхитителен сезонен десерт с узрели ягоди, съчетани с пресен босилек, създавайки
+                            освежаваща и ароматна вкусова комбинация, която въплъщава есенцията на лятото.</p>
+                        <p><strong>Основни съставки:</strong> кисело мляко, орехи, мед, захар, желатин (за
+                            консистенция), ванилов екстракт</p>
+                    </section>
+                    <ul class="food-nutrition-table">
+                        <li>
+                            <p>Калории:</p>
+                            <strong class="number-strong">200</strong>
+                        </li>
+                        <li>
+                            <p>Общо мазнини:</p>
+                            <strong class="number-strong">12g</strong>
+                        </li>
+                        <li>
+                            <p>Наситени мазнини:</p>
+                            <strong class="number-strong">3g</strong>
+                        </li>
+                        <li>
+                            <p>Общо въглехидрати:</p>
+                            <strong class="number-strong">20g</strong>
+                        </li>
+                        <li>
+                            <p>Протеин:</p>
+                            <strong class="number-strong">6g</strong>
+                        </li>
+                        <li>
+                            <p>Захари:</p>
+                            <strong class="number-strong">15g</strong>
+                        </li>
+                        <li>
+                            <p>Натрий:</p>
+                            <strong class="number-strong">50 mg</strong>
+                        </li>
+                        <li>
+                            <p>Холестерол:</p>
+                            <strong class="number-strong">15 mg</strong>
+                        </li>
+                    </ul>
+                </article>
+                <article class="desert-detailed-card">
+                    <section class="desert-img-wrapper">
+                        <img
+                            src="./assets/Firefly%20Crispy%20sunflower%20seed%20with%20cream%20desert%20on%20a%20white%20background%201445.png"
+                            alt="Sunflower dessert">
+                    </section>
+                    <section class="desert-titles">
+                        <h2>Ягоди и босилек</h2>
+                        <p>Възхитителен сезонен десерт с узрели ягоди, съчетани с пресен босилек, създавайки
+                            освежаваща и ароматна вкусова комбинация, която въплъщава есенцията на лятото.</p>
+                        <p><strong>Основни съставки:</strong> кисело мляко, орехи, мед, захар, желатин (за
+                            консистенция), ванилов екстракт</p>
+                    </section>
+                    <ul class="food-nutrition-table">
+                        <li>
+                            <p>Калории:</p>
+                            <strong class="number-strong">200</strong>
+                        </li>
+                        <li>
+                            <p>Общо мазнини:</p>
+                            <strong class="number-strong">12g</strong>
+                        </li>
+                        <li>
+                            <p>Наситени мазнини:</p>
+                            <strong class="number-strong">3g</strong>
+                        </li>
+                        <li>
+                            <p>Общо въглехидрати:</p>
+                            <strong class="number-strong">20g</strong>
+                        </li>
+                        <li>
+                            <p>Протеин:</p>
+                            <strong class="number-strong">6g</strong>
+                        </li>
+                        <li>
+                            <p>Захари:</p>
+                            <strong class="number-strong">15g</strong>
+                        </li>
+                        <li>
+                            <p>Натрий:</p>
+                            <strong class="number-strong">50 mg</strong>
+                        </li>
+                        <li>
+                            <p>Холестерол:</p>
+                            <strong class="number-strong">15 mg</strong>
+                        </li>
+                    </ul>
+                </article>
+            </article>
+            <section class="contact-us">
+                <p>Ако имате интерес към нашите вкусове можете да се свържете с нас , за да уточним цени, методи на
+                    достава и условия за съхранение.</p>
+                <button class="make-a-request-btn">Направи заявка</button>
+            </section>
+        </section>
+
+        <section class="client-feedback">
+            <article class="feedback-titles">
+                <h2>Отзиви от клиенти</h2>
+                <img src="./assets/separator.png" class="separator" alt="">
+                <img class="walnut" src="./assets/Firefly%20Walnuts%20on%20a%20white%20background%201445.png" alt="Walnuts">
+            </article>
+            <article class="reviews">
+                <section class="review">
+                    <strong class="client-name">Майкъл Томпсън - ⭐⭐⭐⭐⭐</strong>
+                    <q>Имах удоволствието да опитам десерта с ягоди и босилек и той надмина всички очаквания. Свежестта
+                        на ягодите, съчетана с фината нотка на босилек, беше истинско откровение. Нямам търпение да
+                        поръчайте отново!
+                    </q>
+                </section>
+                <section class="review">
+                    <strong class="client-name">Емили Чен - ⭐⭐⭐⭐⭐</strong>
+                    <q>Десертът с хрупкави слънчогледови семки на Krystallino беше възхитителна изненада! Хрупкавостта
+                        на слънчогледовите семки, комбинирана с кремообразната основа, беше перфектна хармония от
+                        вкусове и текстури. Наистина трябва да опитате!
+                    </q>
+                </section>
+                <section class="review">
+                    <strong class="client-name">Дейвид Мартинез - ⭐⭐⭐⭐⭐</strong>
+                    <q>Бях заинтригуван от десерта с бекон и боровинки и той не ме разочарова! Пикантният бекон се
+                        съчетаваше изненадващо добре със сладостта на боровинките, създавайки уникално и запомнящо се
+                        десертно изживяване.
+                    </q>
+                </section>
+            </article>
+        </section>
+        <section class="requests">
+            <article class="requests-headings">
+                <h2>Запитвания и <br> заявки</h2>
+                <img src="./assets/separator.png" class="separator" alt="">
+                <h4>За да направите поръчка или запитване за нашите десерти, моля свържете се с нас на: </h4>
+            </article>
+            <article class="request-join">
+                <section class="contact-info">
+                    <p>Имейл:</p>
+                    <strong>info@krystallino.com</strong>
+                    <p>Адрес:</p>
+                    <strong>123 Вкусната улица, Девин, България</strong>
+                    <p>Телефон:</p>
+                    <strong>+359 (899) 456-7890</strong>
+                </section>
+                <section class="contact-form">
+                    <form action="#submit">
+                        <label for="names">Вашите имена</label>
+                        <input type="text" name="names" id="names">
+                        <label for="contact-phone">Телефон за връзка</label>
+                        <input type="text" name="contact-phone" id="contact-phone">
+                        <label for="email">Имейл за контакти:</label>
+                        <input type="text" name="email" id="email">
+                        <label for="question">Вашият въпрос или заявка</label>
+                        <textarea name="question" id="question"></textarea>
+                        <input type="submit" value="Направи заявка">
+                    </form>
+                </section>
+            </article>
+
+        </section>
+        <section class="in-the-media">
+            <h2>В медиите</h2>
+            <img src="./assets/separator.png" class="separator" alt="">
+            <article class="media-reports">
+                <ul>
+                    <li class="report">
+                        <section class="report-titles">
+                            <p>В медиите: </p>
+                            <h3>Krystallino: Предефиниране на иновациите в десерта
+                            </h3>
+                            <p>Източник: сп. Кулинарни изкушения</p>
+                        </section>
+                        <p class="report-content">Krystallino, ръководен от известния сладкар Кристалин Илчев,
+                            революционизира десертната сцена с иновативните си творения. От кремообразното кисело мляко,
+                            орехи и меден десерт до неочакваното съчетание на бекон и боровинки, всяко лакомство е
+                            щателно изработено, за да измами вкусовите пъпки и да разшири границите на вкуса. С фокус
+                            върху качествените съставки и вниманието към детайла, Krystallino продължава да завладява
+                            публиката и да предефинира иновациите в десертите.
+                        </p>
+                        <button>Прочети статията</button>
+                    </li>
+                    <li class="report">
+                        <section class="report-titles">
+                            <p>В медиите: </p>
+                            <h3>Krystallino: A Sweet Success Story
+                            </h3>
+                            <p>Източник: сп. Кулинарни изкушения</p>
+                        </section>
+                        <p class="report-content">Страстта на главния готвач Кристалин Илчев към сладкишите доведе до
+                            създаването на Krystallino, марка, известна със своята креативност и артистичност в
+                            приготвянето на десерти. С нарастваща база от фенове и разширяващо се меню от декадентски
+                            изкушения, Krystallino прави вълни в кулинарния свят. Отдадеността на главния готвач
+                            Кристалин на качеството и желанието й да предизвиква радост с всяка хапка затвърдиха мястото
+                            на Krystallino като сладка история на успеха в света на десертите.
+                        </p>
+                        <button>Прочети статията</button>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-images">
+            <img src="./assets/Firefly%20Walnuts%20on%20a%20white%20background%201445.png" alt="Wallnuts">
+            <img src="./assets/krystallino-logo.png" alt="Krystallino logo">
+            <section class="contacts">
+                <p>info@krystallino.com</p>
+                <p>+359 (899) 456-7890</p>
+            </section>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#our-desserts">Нашите десерти</a></li>
+                <li><a href="#reviews">Отзиви</a></li>
+                <li><a href="#forOrders">За поръчки и запитвания</a></li>
+                <li><a href="#feedback">Препоръки</a></li>
+                <li><a href="#the-media">Медиите за нас</a></li>
+                <li><a href="#contact-us">Контакти</a></li>
+            </ul>
+        </nav>
+        <a href="#rules">Правила и условия</a>
+        |
+        <a href="#privacy-policy">Политика и поверителност</a>
+        <p>Copyright © 2024 Krystallino. Всички права запазени.</p>
+    </footer>
+</div>
+
+<script type="module" src="/src/js/main.js"></script>
+</body>
 </html>
