@@ -112,7 +112,7 @@ header nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    flex-basis: 12%;
+    flex-basis: 20%;
     padding-right: 25px;
     padding-left: 25px;
     padding-bottom: 48px;
@@ -139,14 +139,14 @@ header nav {
 
 .food-img-card-wrapper {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 150px;
 }
 
 .food-img-card-wrapper img {
     position: absolute;
     width: 152%;
-    top: -53%;
+    top: -75%;
     left: -25%;
 }
 
@@ -211,6 +211,7 @@ header nav {
     font-family: "Noto Serif", sans-serif;
     font-weight: 700;
     font-size: 80px;
+    margin-bottom: 20px;
 }
 
 .deserts h3 {
@@ -549,7 +550,4 @@ footer {
     margin-top: 12px;
 }
 
-#app > main > section.landing > section.landing-foods > ul > li:nth-child(4) > li > section > img{
-    top: -120%
-}
 

@@ -1,5 +1,5 @@
 // Продължи с твоя vanilla JavaScript код тук.
-const templateFirstDesserts = `<li class="food-card">
+const templateFirstDesserts = `
                         <section class="food-img-card-wrapper">
                             <img
                                 src="./assets/{image}"
@@ -9,7 +9,7 @@ const templateFirstDesserts = `<li class="food-card">
                         <img class="separator" src="./assets/separator.png" alt="">
                         <p>{shortDesc}</p>
                         <a href="#learn-more">НАУЧЕТЕ ПОВЕЧЕ</a>
-                    </li>`
+     `
 
 
 const templateSecondDesserts = `
@@ -61,9 +61,9 @@ const templateSecondDesserts = `
 `
 
 
-let desserts = await fetch("http://localhost:4000/desserts").then(x=>x.json());
+let desserts = await fetch("http://localhost:4000/desserts").then(x => x.json());
 let domFirstDesserts = document.querySelector(".landing-foods ul")
-let domSecondDesserts = document.querySelector(".deserts> h3")
+let domSecondDesserts = document.querySelector(".deserts > h3")
 for (const dessert of desserts) {
     let childFirst = document.createElement("li")
     childFirst.className = "food-card";
@@ -73,11 +73,10 @@ for (const dessert of desserts) {
     newStrFirst = newStrFirst.replace("{shortDesc}", dessert.description_short);
 
 
-
     let childSecond = document.createElement("article")
     childSecond.className = "desert-detailed-card";
 
-    let newStrSecond =  templateSecondDesserts.replace("{image}", dessert.image);
+    let newStrSecond = templateSecondDesserts.replace("{image}", dessert.image);
     newStrSecond = newStrSecond.replaceAll("{name}", dessert.name);
     newStrSecond = newStrSecond.replace("{longDesc}", dessert.description_long);
     newStrSecond = newStrSecond.replace("{ingredients}", dessert.ingredients_text);
@@ -94,13 +93,18 @@ for (const dessert of desserts) {
     childSecond.innerHTML += newStrSecond;
 
     domFirstDesserts.appendChild(childFirst)
-    domSecondDesserts.appendChild(childSecond)
+    domSecondDesserts.insertAdjacentElement("afterend", childSecond)
 
 
 }
-domSecondDesserts.innerHTML += `            <section class="contact-us">
-                <p>Ако имате интерес към нашите вкусове можете да се свържете с нас , за да уточним цени, методи на
+
+
+let el = document.querySelector(".deserts article:last-of-type")
+
+let elToInsert = document.createElement("section");
+elToInsert.className = "contact-us"
+elToInsert.innerHTML = ` <p>Ако имате интерес към нашите вкусове можете да се свържете с нас , за да уточним цени, методи на
                     достава и условия за съхранение.</p>
-                <button class="make-a-request-btn">Направи заявка</button>
-            </section>`
+                <button class="make-a-request-btn">Направи заявка</button>`
+el.insertAdjacentElement("afterend", elToInsert);
 
